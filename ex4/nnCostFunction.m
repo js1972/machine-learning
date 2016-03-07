@@ -88,7 +88,7 @@ J = (1 / m) * sum(sum(-Y .* log(a3) - (1 - Y) .* log(1 - a3)));
 J = J + (lambda / (2 * m)) * (sum(sum(Theta1(:, 2:end) .^ 2)) + sum(sum(Theta2(:, 2:end) .^ 2)));
 
 
-% GRADIENT calculation ->
+% GRADIENT calculation - fully vectorized instead of for-loop ->
 
 % The feedforward pass has already been performed above, so we use those values
 delta3 = (a3 - Y)'; %delta3 is 10x5000
